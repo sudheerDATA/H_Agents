@@ -62,3 +62,42 @@ def generate_text_with_conversation(messages, model="gpt-3.5-turbo"):
     
     # Return the AI's generated response content.
     return response.choices[0].message.content
+
+
+"""
+Project Description:
+---------------------
+
+This project demonstrates how to interact with OpenAI's API to generate text-based responses using different prompts. 
+It includes two primary functions:
+
+1. **generate_text_basic**: This function allows you to send a single prompt to the OpenAI model and get a response. 
+   It also allows you to set a system-level prompt that guides the behavior of the AI. 
+   For example, you can instruct the AI to act as a helpful assistant.
+
+2. **generate_text_with_conversation**: This function is designed to handle more complex interactions 
+   where there is a conversation history. The conversation is passed as a list of messages, 
+   where each message has a role (e.g., "system", "user", "assistant") and content (the actual text). 
+   The AI model uses this history to generate a more contextually relevant response.
+
+**Environment Setup:**
+----------------------
+
+- The project uses the `dotenv` library to securely manage environment variables, 
+  particularly for storing the OpenAI API key. This ensures that sensitive information 
+  like API keys are not hard-coded into the script.
+
+- Before running the script, make sure to create a `.env` file in the same directory as the script 
+  and add your OpenAI API key in the following format:
+  
+**Usage:**
+----------
+
+- To generate a simple response based on a user prompt, use the `generate_text_basic` function.
+- For more advanced conversational scenarios where you have multiple exchanges with the AI, 
+use the `generate_text_with_conversation` function.
+
+This project serves as a foundational example for anyone looking to integrate OpenAI's powerful 
+language models into their applications, whether for simple text generation or more sophisticated 
+conversational AI systems.
+"""
