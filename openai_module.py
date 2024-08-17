@@ -16,7 +16,16 @@ load_dotenv()
 
 # Create an instance of the OpenAI class with the API key retrieved from environment variables.
 # The API key is fetched using os.getenv, ensuring sensitive information is not hard-coded in the script.
+# Create an object (instance) of the OpenAI class, which allows us to interact with OpenAI's API.
+# The 'api_key' parameter is set by retrieving the API key from environment variables using os.getenv.
+# This approach keeps the API key secure and avoids hard-coding sensitive information directly into the script.
+
+# We are making a special tool (object) called 'openai_client' from a blueprint (class) called 'OpenAI'.
+# This tool will help us talk to OpenAI's computer brain (API) and ask it to do things like answer questions.
+# To use this tool, we need a secret key (like a password), which we get from a safe place (environment variables) using 'os.getenv'.
+# By getting the secret key from this safe place, we make sure that our key is hidden and not written out in the open where anyone can see it.
 openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
 
 def generate_text_basic(prompt: str, model="gpt-3.5-turbo", system_prompt: str="You are a helpful AI assistant"):
     """
